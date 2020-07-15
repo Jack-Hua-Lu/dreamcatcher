@@ -8,7 +8,7 @@ The largest and most successful enterprise companies trust DevelopIntelligence t
 
 DevelopIntelligence Delivers.
 
-## Class Information Page
+## Dwijen Testing -- Class Information Page
 
 [https://www.t4d.io/developintelligence-front-end-boot-camp-07062020](https://www.t4d.io/developintelligence-front-end-boot-camp-07062020)
 
