@@ -7,6 +7,7 @@ import {
 export const votersReducer = (voters = [], action) => {
 
   if (action.type === REFRESH_VOTERS_DONE_ACTION) {
+    console.log("voter reducer:" + action.voters);
     return action.voters;
   }
 

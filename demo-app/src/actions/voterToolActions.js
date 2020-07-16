@@ -24,8 +24,9 @@ export const refreshVoters = () => {
     dispatch(createRefreshVotersRequestAction());
     return fetch(serverURL)
       .then(res => res.json())
-      .then(voters => dispatch(createRefreshVotersDoneAction(voters)));
-
+      .then(voters => dispatch(createRefreshVotersDoneAction(voters)))
+      .then(voters => console.log(voters)
+      );
   };
 
 };
@@ -67,7 +68,7 @@ export const saveVoter = voter => {
       .then(() => dispatch(refreshVoters()));
 
   };
-  
+
 }
 
 export const createDeleteVoterRequestAction = voterId =>
@@ -84,9 +85,9 @@ export const deleteVoter = voterId => {
       .then(() => dispatch(refreshVoters()));
 
   };
-  
+
 };
-  
+
 export const createEditVoterAction = voterId =>
   ({ type: EDIT_VOTER_ACTION, voterId });
 export const createCancelVoterAction = () =>

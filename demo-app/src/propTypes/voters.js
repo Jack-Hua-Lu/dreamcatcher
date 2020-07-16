@@ -8,7 +8,7 @@ export const voterPropTypes = PropTypes.shape({
   city: PropTypes.string.isRequired,
   birthday: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  phone: PropTypes.number.isRequired,
+  phone: PropTypes.string.isRequired,
 });
 
 export const votersPropTypes = PropTypes.arrayOf(voterPropTypes);

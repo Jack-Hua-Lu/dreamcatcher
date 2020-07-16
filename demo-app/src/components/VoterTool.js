@@ -7,7 +7,7 @@ import { VoterForm } from './VoterForm';
 import "./VoterTool.css";
 
 export const VoterTool = ({
-  cars, editVoterId,
+  voters, editVoterId,
   onAddVoter: addVoter, onSaveVoter: saveVoter,
   onDeleteVoter: deleteVoter, onEditVoter: editVoter,
   onCancelVoter: cancelVoter,
@@ -16,7 +16,7 @@ export const VoterTool = ({
   return (
     <div className="voter-tool">
       <ToolHeader headerText="Voter Tool" />
-      <VoterTable cars={cars} editVoterId={editVoterId}
+      <VoterTable voters={voters} editVoterId={editVoterId}
         onEditVoter={editVoter} onDeleteVoter={deleteVoter}
         onSaveVoter={saveVoter} onCancelVoter={cancelVoter} />
       <VoterForm buttonText="Add Voter" onSubmitVoter={addVoter} />
