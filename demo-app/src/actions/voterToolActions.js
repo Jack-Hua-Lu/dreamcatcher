@@ -16,7 +16,7 @@ export const createRefreshVotersDoneAction = voters => ({
   voters,
 });
 
-export const serverURL = 'http://localhost:3060/voters';
+export const serverURL = 'http://localhost:3060/voters/';
 export const refreshVoters = () => {
 
   return dispatch => {
