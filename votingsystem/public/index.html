@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+    <link href="/reset.css" rel="stylesheet">
+    <link href="/layout.css" rel="stylesheet">
+    <link href="/theme.css" rel="stylesheet">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div id="modal"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <!-- <script>
+
+      'use strict';
+
+      let t;
+      console.log(typeof t);
+
+      t = 2;
+      console.log(typeof t);
+
+      t = 'hello!';
+      console.log(typeof t);
+
+      t = false;
+      console.log(typeof t);
+
+      t = Symbol();
+      console.log(typeof t);
+
+      t = null;
+      console.log(typeof t);
+
+      // object literal
+      t = {
+        firstName: 'Bob',
+      };
+      console.log(typeof t);
+
+      // array literal
+      t = [1,2,3,4];
+      t = [ { id: 1, name: 'a' }, { id: 2, name: 'b' } ];
+      console.log(typeof t);
+
+      t = function() {
+        console.log('hi!');
+      };
+
+      t(); // invoke
+      console.log(typeof t);
+
+      t.someNewProp = 'some value';
+      console.dir(t);
+
+
+
+
+
+    </script> -->
+    <script>
+      /*
+      function add(car) {
+        return msg;
+      }
+
+
+      CarForm(add);
+
+
+      function CarForm(onSubmitCar) {
+        console.log(onSubmitCar('hi!'));
+      }
+      */
+ 
+      /*
+      doIt(); // invoke
+      const doIt2 = doIt; // assigning the function object reference to doIt2
+      doIt2();
+      doIt();
+      */
+
+      /*
+      function outer(msg) {
+
+        // defining function inner, and returning a reference to it
+        return function inner() {
+          console.log(msg);
+        };
+      }
+
+      const fn = outer('hi!');
+      fn(); // invoking function inner
+      */
+
+      /*
+      const person = {
+        firstName: 'Bob',
+        lastName: 'Smith',
+        getFullName: function() {
+          return this.firstName + ' ' + this.lastName;
+        },
+      };
+
+      const person2 = {
+        firstName: 'Sally',
+        lastName: 'Smith',
+      };
+
+      person2.getFullName = person.getFullName;
+
+      console.log(person.getFullName());
+      console.log(person2.getFullName());
+      console.log(person.getFullName === person2.getFullName);
+
+      */
+
+    </script>
+    <!-- <script>
+
+      /*
+      const s = "hello";
+
+      const t = s + " world";
+
+      console.log(t);
+      console.log(t.length);
+      console.log(t.startsWith('he'));
+      */
+
+      /*
+      console.log(-1/0);
+      console.log(NaN === parseInt('yyyyy'));
+      console.log(isNaN(parseInt('yyyyy')));
+      console.log(typeof NaN);
+      console.log( Math.abs((0.1 + 0.2) - 0.3) < Number.EPSILON );
+
+      console.log(Number.MAX_SAFE_INTEGER + 1);
+      console.log(Number.MAX_SAFE_INTEGER + 2);
+      */
+
+      /*
+      if ([]) {
+        console.log('truthy');
+      } else {
+        console.log('falsy');
+      }
+      */
+
+      // falsy
+      // empty string
+      // zero
+      // false
+      // null
+      // undefined
+      // NaN
+
+      // console.log(0 || 0);
+
+      /*
+      function outputFullName(person) {
+        console.log(person.firstName + ' ' + person.lastName);
+      }
+
+      outputFullName({
+        firstName: 'Bob',
+        lastName: 'Smith',
+      });
+      */
+
+      /*
+      const person = {
+        firstName: 'Bob',
+        lastName: 'Smith',
+        address: {
+          street: '123 Oak Lane',
+          city: 'Oakville',
+        },
+        "some cool prop - this is awesome!": 42,
+      };
+
+      person.age = 23;
+      delete person.lastName;
+
+      const propName = 'age';
+
+      console.log(person[propName]);
+
+      console.log(Object.keys(person));
+
+
+      console.log(person);
+      */
+
+      const nums = [ 1, 2, 3, 4, 5 ];
+
+      /*
+      console.log(nums[2]);
+      nums[3] = 'f';
+      console.log(nums);
+      */
+
+      // perform side effect on an array, use forEach
+      nums.forEach(num => {
+        console.log(num);
+      });
+
+      // transforming an array
+      const doubleNums = nums.map(num => num * 2);
+      console.log(doubleNums);
+
+      // filtering out values
+      const numsGreaterThanTwo = nums.filter(num => num > 2);
+      console.log(numsGreaterThanTwo);
+
+    </script> -->
+
+    <!-- <script>
+
+      const outer = () => {
+
+        let t = 2;
+
+        setTimeout(() => {
+          t = 4;
+        }, 2000)
+
+        console.log('first task');
+
+        // defining the function, and returning the object reference to the function
+        return () => {
+          console.log(t);
+        };
+      }
+
+      // assigning the function object reference to inner
+      const inner = outer();
+
+      // invoking the function
+      inner();
+
+      setTimeout(() => {
+        inner();
+      }, 4000);
+
+      //console.dir(inner);
+
+    </script> -->
+
+    <script>
+
+      /*
+      setTimeout(() => {
+          console.log('a');
+          setTimeout(() => {
+              console.log('b');
+              setTimeout(() => {
+                  console.log('c');
+                  console.log('d');
+                }, 500);
+          }, 1000);
+      }, 2000);
+      */
+
+      // Exercise
+      // After all three setTimeouts complete, run the allDone function
+      // Rules:
+      // 1. All three calls to setTimeout must be in the first task
+      // 2. You may not wrap the allDone in a fourth setTimeout
+      // 3. You can modify the code as long as you do not change the setTimeout and console part
+
+      /*
+      const allDone = () => {
+        console.log('all done');
+      };
+
+      setTimeout(() => {
+        console.log('a');
+      }, 1000);
+
+      setTimeout(() => {
+        console.log('b');
+      }, 500);
+
+      setTimeout(() => {
+        console.log('c');
+      }, 2000);
+      */
+
+
+      /*
+      class Promise {
+
+        constructor(fn) {
+
+          this.resolveFns = [];
+          this.rejectFns = [];
+
+          const resolve = (data) => {
+            this.resolveFns.forEach(resolveFn => {
+              resolveFn(data);
+            });
+          };
+
+          const reject = (data) => {
+            this.rejectFns.forEach(rejectFn => {
+              rejectFn(data);
+            });
+          };
+
+          fn(resolve, reject);
+        }
+
+        then(fn) {
+          this.resolveFns.push(fn);
+        }
+
+        catch(fn) {
+          this.rejectFns.push(fn);
+        }
+
+      }
+
+      */
+
+      /*
+      const p = new Promise((resolve, reject) => {
+
+        console.log('calling function');
+
+        // async operation - inside the promise
+        setTimeout(() => {
+          console.log('calling resolve');
+          resolve('a');
+        }, 2000);
+
+      });
+
+      p
+        .then((result) => {
+          console.log('done');
+          console.log(result);
+        })
+        .catch(() => {
+          console.log('something went wrong');
+        });
+
+      console.log('waiting');
+
+      */
+
+      /*
+      const myFetch =(url) => {
+        return new Promise(resolve => {
+
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener('readystatechange', () => {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              resolve(JSON.parse(xhr.responseText));
+            }
+          });
+    
+          xhr.open('GET', url);
+          xhr.send();
+        });
+      };
+
+      // please create a myFetch function which works as described below
+
+      const p = myFetch('http://localhost:3060/cars')
+      p.then(cars => console.log(cars));
+
+      */
+
+      /*
+      const task1 = () => new Promise(resolve => {
+        setTimeout(() => resolve('task 1'), 2000);
+      });
+
+      const task2 = () => new Promise(resolve => {
+        setTimeout(() => resolve('task 2'), 1000);
+      });
+
+      const task3 = () => new Promise(resolve => {
+        setTimeout(() => resolve('task 3'), 500);
+      });
+      */
+
+      /* promise version
+      const doWork = () => {
+        return task1()
+          .then(result => {
+            console.log(result);
+            return task2();
+          })
+          .then(result => {
+            console.log(result);
+            return task3();
+          })
+          .then(result => {
+            console.log(result);
+          });
+      };
+      */
+
+      /*
+      const doWork = async () => {
+
+        const result1 = await task1();
+        console.log(result1);
+
+        const result2 = await task2();
+        console.log(result2);
+
+        const result3 = await task3();
+        console.log(result3);
+      };
+
+
+      doWork().then(() => console.log('work is done'));
+
+      
+      /*
+      Promise.all([ task1(), task2(), task3() ]).then(results => {
+        console.log(results);
+        console.log('all done');
+      });
+      */
+
+    </script>
+
+
+  </body>
+</html>
