@@ -32,49 +32,22 @@
     {
       "id": 1,
       "name": "Fav Food Election",
+      "voterIds": [1, 2, 3],
       "questions": [
-        "do you like pizza?",
-        "do you like pasta?",
-        "do you like icecream?"
+        { "id": 1, "question": "do you like pizza?", "yesCount": 10},
+        { "id": 2, "question": "do you like pasta?", "yesCount": 0},
+        { "id": 3, "question": "do you like icecream?", "yesCount": 1}
       ]
     },
     {
       "id": 2,
-      "name": "Fav Show Election",
+      "name": "Fav Food Election",
+      "voterIds": [1, 2, 3],
       "questions": [
-        "do you like Friends?",
-        "do you like Game of Thrones?",
-        "do you like House of Cards?"
+        { "id": 1, "question": "do you like pizza?", "yesCount": 10},
+        { "id": 2, "question": "do you like pasta?", "yesCount": 0},
+        { "id": 3, "question": "do you like icecream?", "yesCount": 1}
       ]
-    }
-  ],
-  "ballots": [
-    {
-      "id": 1,
-      "voterId": 1,
-      "electionId": 1,
-      "votes": [
-        "yes",
-        "no",
-        "yes"
-      ]
-    }
-  ],
-  "colors": [
-    {
-      "id": 1,
-      "name": "red",
-      "hexcode": "#ff0000"
-    },
-    {
-      "id": 2,
-      "name": "green",
-      "hexcode": "#00ff00"
-    },
-    {
-      "name": "blue",
-      "hexcode": "#0000ff",
-      "id": 4
     }
   ],
   "cars": [
