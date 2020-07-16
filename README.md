@@ -14,7 +14,7 @@ DevelopIntelligence Delivers.
 
 ## Other Resources
 
-The instructor will distribute additional private links during class for downloading courseware, and downloading recordings...
+Dwijen -- The instructor will distribute additional private links during class for downloading courseware, and downloading recordings...
 
 All code in this repository is distributed under the [MIT license](license.txt).
 
