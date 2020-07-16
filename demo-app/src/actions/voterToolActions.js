@@ -4,6 +4,7 @@ export const REFRESH_VOTERS_DONE_ACTION = 'REFRESH_VOTERS_DONE';
 export const ADD_VOTER_REQUEST_ACTION = 'ADD_VOTER_REQUEST';
 export const SAVE_VOTER_REQUEST_ACTION = 'SAVE_VOTER_REQUEST';
 export const DELETE_VOTER_REQUEST_ACTION = 'DELETE_VOTER_REQUEST';
+export const DELETE_VOTERS_REQUEST_ACTION = 'DELETE_VOTERS_REQUEST';
 export const EDIT_VOTER_ACTION = 'EDIT_VOTER';
 export const CANCEL_VOTER_ACTION = 'CANCEL_VOTER';
 
@@ -83,10 +84,24 @@ export const deleteVoter = voterId => {
       method: 'DELETE',
     })
       .then(() => dispatch(refreshVoters()));
-
   };
 
 };
+
+export const createDeleteVotersRequestAction = voterIds =>
+  ({ type: DELETE_VOTERS_REQUEST_ACTION, voterIds });
+
+export const deleteVoters = voterIds => {
+  console.log("calling deleteVotes");
+  return dispatch => {
+    voterIds.forEach(voterId => deleteVoter(voterId));
+  };
+};
+
+// export const deleteVoters = voterIds => {
+//   console.log("calling deleteVoters");
+//   voterIds.forEach(voterId => deleteVoter(voterId));
+// };
 
 export const createEditVoterAction = voterId =>
   ({ type: EDIT_VOTER_ACTION, voterId });

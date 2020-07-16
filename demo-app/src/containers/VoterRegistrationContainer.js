@@ -3,14 +3,13 @@ import { bindActionCreators } from 'redux';
 import { useSelector, useDispatch } from 'react-redux';
 
 import {
-  addVoter, saveVoter, deleteVoter, createEditVoterAction,
-  createCancelVoterAction, refreshVoters,
+  addVoter, refreshVoters,
 } from '../actions/voterToolActions';
 
-import { VoterTool } from '../components/VoterTool';
+import { VoterRegistration } from '../components/VoterRegistration';
 import { LoadingModal } from '../components/LoadingModal';
 
-export const VoterToolContainer = () => {
+export const VoterRegistrationContainer = () => {
 
   const stateProps = useSelector(state => state);
 
@@ -19,11 +18,6 @@ export const VoterToolContainer = () => {
   const dispatchProps = useMemo(() => bindActionCreators({
     onRefreshVoters: refreshVoters,
     onAddVoter: addVoter,
-    onSaveVoter: saveVoter,
-    onDeleteVoter: deleteVoter,
-    onEditVoter: createEditVoterAction,
-    onCancelVoter: createCancelVoterAction,
-    onDeleteVoters: deleteVoters,
   }, dispatch), [ dispatch ]);
 
   useEffect(() => {
@@ -34,7 +28,7 @@ export const VoterToolContainer = () => {
 
 
   return <>
-    <VoterTool {...dispatchProps} {...stateProps} />
+    <VoterRegistration {...dispatchProps} {...stateProps} />
     <LoadingModal isLoading={stateProps.isLoading} />
   </>;
 };

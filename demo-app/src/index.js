@@ -8,7 +8,8 @@ import { voterToolStore } from './stores/voterToolStore';
 import { calcToolStore } from './stores/calcToolStore';
 
 import { ColorToolContainer } from './containers/ColorToolContainer';
-import { VoterToolContainer } from './containers/VoterToolContainer';
+import { VoterRegistrationContainer } from './containers/VoterRegistrationContainer';
+import { VoterListContainer } from './containers/VoterListContainer';
 import { CalcToolContainer } from './containers/CalcToolContainer';
 
 import { Layout } from './components/Layout';
@@ -23,7 +24,8 @@ ReactDOM.render(
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/color-tool">Color Tool</Link></li>
-          <li><Link to="/voter-tool">Voter Tool</Link></li>
+          <li><Link to="/voter-registration">Voter Registration</Link></li>
+          <li><Link to="/voter-list">Voter List</Link></li>
           <li><Link to="/calc-tool">Calc Tool</Link></li>
         </ul>
       </nav>
@@ -37,11 +39,16 @@ ReactDOM.render(
               <ColorToolContainer />
             </Provider>
           </Route>
-          <Route path="/voter-tool">
+          <Route path="/voter-list">
             <Provider store={voterToolStore}>
-              <VoterToolContainer />
+              <VoterListContainer />
             </Provider>
           </Route>
+          <Route path="/voter-Registration">
+            <Provider store={voterToolStore}>
+              <VoterRegistrationContainer />
+            </Provider>
+          </Route>          
           <Route path="/calc-tool">
             <Provider store={calcToolStore}>
               <CalcToolContainer />

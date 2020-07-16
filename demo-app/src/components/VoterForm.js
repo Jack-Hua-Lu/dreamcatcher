@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useHistory } from "react-router-dom";
 
 import {
   StringFormControl,
-  //NumberFormControl,
 } from './FormControls';
 import { useForm } from '../hooks/useForm';
 
@@ -15,13 +15,16 @@ export const VoterForm = ({ buttonText, onSubmitVoter }) => {
     address: '',
     city: '',
     birthdate: '1900-01-01',
-    email: '',
-    phone: NaN,
+    emailAddress: '',
+    phone: '',
   });
 
+  const history = useHistory();
   const submitVoter = () => {
-    onSubmitVoter(voterForm);
-    resetVoterForm();
+    onSubmitVoter(voterForm).then(() => {
+      resetVoterForm();
+      history.push('/voter');
+    });
   };
 
   return (
@@ -44,7 +47,7 @@ export const VoterForm = ({ buttonText, onSubmitVoter }) => {
         value={voterForm.make} onChange={change} />
       <StringFormControl caption="Birthdate" name="birthdate"
         value={voterForm.model} onChange={change} />
-      <StringFormControl caption="Email" name="email"
+      <StringFormControl caption="Email" name="emailAddress"
         value={voterForm.color} onChange={change} />
       <StringFormControl caption="Phone" name="phone"
         value={voterForm.price} onChange={change} />

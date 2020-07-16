@@ -2,27 +2,27 @@ import React from 'react';
 
 import { ToolHeader } from './ToolHeader';
 import { VoterTable } from './VoterTable';
-import { VoterForm } from './VoterForm';
+// import {
+//   StringFormControl,
+// } from './FormControls';
 
 import "./VoterTool.css";
 
-export const VoterTool = ({
+export const VoterList = ({
   voters, editVoterId,
-  onAddVoter: addVoter, onSaveVoter: saveVoter,
+  onSaveVoter: saveVoter,
   onDeleteVoter: deleteVoter, onEditVoter: editVoter,
-  onCancelVoter: cancelVoter, 
-  onDeleteVoters: deleteVoters
+  onCancelVoter: cancelVoter,
+  onDeleteVoters: deleteVoters,
 }) => {
 
   return (
     <div className="voter-tool">
-      <ToolHeader headerText="Voter Tool" />
+      <ToolHeader headerText="Voter List" />
       <VoterTable voters={voters} editVoterId={editVoterId}
         onEditVoter={editVoter} onDeleteVoter={deleteVoter}
-        onSaveVoter={saveVoter} onCancelVoter={cancelVoter} 
-        onDeleteVoters={deleteVoters}
-        />
-      <VoterForm buttonText="Add Voter" onSubmitVoter={addVoter} />
+        onSaveVoter={saveVoter} onCancelVoter={cancelVoter}
+        onDeleteVoters={deleteVoters} />
     </div>
   );
 

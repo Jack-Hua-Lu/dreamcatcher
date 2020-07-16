@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState }  from 'react';
 
 import { votersPropTypes } from '../propTypes/voters';
 import { VoterViewRow } from './VoterViewRow';
@@ -10,9 +10,28 @@ export const VoterTable = ({
   onDeleteVoter: deleteVoter,
   onSaveVoter: saveVoter,
   onCancelVoter: cancelVoter,
+  onDeleteVoters,
 }) => {
 
+
+  const [selectedIds, setSelectedIds] = useState([]);
+
+  const deleteVoters = () => {
+    onDeleteVoters(selectedIds);
+  };
+
+  const selectVoter = (selected, voterId) => {
+    selected 
+      ? setSelectedIds(selectedIds.concat(voterId))
+      : setSelectedIds(selectedIds.filter(id => id !== voterId));
+  };
+
+  console.log(selectedIds);
+
   return (
+    <>
+    <button type="button" onClick={deleteVoters}>Deleted Selected</button>
+
     <table>
       <thead>
         <tr>
@@ -34,9 +53,10 @@ export const VoterTable = ({
               ? <VoterEditRow key={voter.id} voter={voter}
                   onSaveVoter={saveVoter} onCancelVoter={cancelVoter} />
               : <VoterViewRow key={voter.id} voter={voter}
-                  onEditVoter={editVoter} onDeleteVoter={deleteVoter} />)}
+                  onEditVoter={editVoter} onDeleteVoter={deleteVoter} selected={selectedIds.includes(voter.id)} onSelectVoter={selectVoter} />)}
       </tbody>
     </table>
+    </>
   );
 
 };
