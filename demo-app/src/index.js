@@ -6,10 +6,12 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { colorToolStore } from './stores/colorToolStore';
 import { carToolStore } from './stores/carToolStore';
 import { calcToolStore } from './stores/calcToolStore';
+import { electionStore } from './stores/electionStore';
 
 import { ColorToolContainer } from './containers/ColorToolContainer';
 import { CarToolContainer } from './containers/CarToolContainer';
 import { CalcToolContainer } from './containers/CalcToolContainer';
+import { ElectionToolContainer } from './containers/ElectionConatiner';
 
 import { Layout } from './components/Layout';
 
@@ -25,6 +27,7 @@ ReactDOM.render(
           <li><Link to="/color-tool">Color Tool</Link></li>
           <li><Link to="/car-tool">Car Tool</Link></li>
           <li><Link to="/calc-tool">Calc Tool</Link></li>
+          <li><Link to="/election-tool">Election Tool</Link></li>
         </ul>
       </nav>
       <main id="content">
@@ -42,6 +45,13 @@ ReactDOM.render(
               <CarToolContainer />
             </Provider>
           </Route>
+
+          <Route path="/election-tool">
+            <Provider store={electionStore}>
+              <ElectionToolContainer />
+            </Provider>
+          </Route>
+
           <Route path="/calc-tool">
             <Provider store={calcToolStore}>
               <CalcToolContainer />

@@ -16,6 +16,32 @@
       "id": 4
     }
   ],
+  "elections": [
+    {
+      "electionName": "options 1",
+      "question": "false",
+      "options": "pizza",
+      "id": 1
+    },
+    {
+      "electionName": "aaass",
+      "question": "sss",
+      "options": "sss123",
+      "id": 2
+    },
+    {
+      "electionName": "Lunch",
+      "question": "menu",
+      "options": "rice",
+      "id": 3
+    },
+    {
+      "electionName": "brkfst",
+      "question": "light",
+      "options": "milk and conflakes",
+      "id": 4
+    }
+  ],
   "cars": [
     {
       "id": 1,
@@ -40,6 +66,30 @@
       "color": "a",
       "price": 1,
       "id": 3
+    },
+    {
+      "make": "Tesla",
+      "model": "Mode Y",
+      "year": 2020,
+      "color": "Blue",
+      "price": 33000,
+      "id": 4
+    },
+    {
+      "make": "aa",
+      "model": "Model S",
+      "year": 2020,
+      "color": "red",
+      "price": 220000,
+      "id": 5
+    },
+    {
+      "make": "GMC",
+      "model": "pontiac",
+      "year": 1998,
+      "color": "Green",
+      "price": 8000,
+      "id": 6
     }
   ]
 }
