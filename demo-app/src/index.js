@@ -12,6 +12,8 @@ import { CarToolContainer } from './containers/CarToolContainer';
 import { CalcToolContainer } from './containers/CalcToolContainer';
 
 import { Layout } from './components/Layout';
+import { votingSystemStore } from './stores/votingSystemStore';
+import { BallotToolContainer } from './containers/BallotToolContainer';
 
 ReactDOM.render(
   <Router>
@@ -25,6 +27,7 @@ ReactDOM.render(
           <li><Link to="/color-tool">Color Tool</Link></li>
           <li><Link to="/car-tool">Car Tool</Link></li>
           <li><Link to="/calc-tool">Calc Tool</Link></li>
+          <li><Link to="/ballot-tool">Ballot Tool</Link></li>
         </ul>
       </nav>
       <main id="content">
@@ -45,6 +48,11 @@ ReactDOM.render(
           <Route path="/calc-tool">
             <Provider store={calcToolStore}>
               <CalcToolContainer />
+            </Provider>
+          </Route>
+          <Route path="/ballot-tool">
+            <Provider store={votingSystemStore}>
+              <BallotToolContainer />
             </Provider>
           </Route>
         </Switch>
