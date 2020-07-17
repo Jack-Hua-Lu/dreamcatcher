@@ -11,14 +11,14 @@
       "phone": "6509446000"
     },
     {
-      "id": 2,
       "firstName": "Jack",
       "lastName": "Lu",
-      "city": "Mountain View",
       "address": "111 main st.",
-      "birthDate": "07/10/1986",
+      "city": "Mountain View",
+      "birthDate": "2020-07-16",
       "emailAddress": "jack@intuit.com",
-      "phone": "6509446001"
+      "phone": "6509446001",
+      "id": 2
     },
     {
       "id": 3,

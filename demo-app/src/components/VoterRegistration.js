@@ -6,7 +6,6 @@ import { VoterForm } from './VoterForm';
 import "./VoterTool.css";
 
 export const VoterRegistration = ({
-  voters,
   onAddVoter: addVoter,
 }) => {
 
