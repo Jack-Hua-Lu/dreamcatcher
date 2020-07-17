@@ -16,6 +16,7 @@ import { CalcToolContainer } from './containers/CalcToolContainer';
 import { ElectionToolContainer } from './containers/ElectionContainer';
 
 import { Layout } from './components/Layout';
+import logo from './tm-dreamCatcher.jpg';
 
 ReactDOM.render(
   <Router>
@@ -36,7 +37,7 @@ ReactDOM.render(
       <main id="content">
         <Switch>
           <Route path="/" exact>
-            <div>Home</div>
+            <img src={logo} alt="teamcatcher" />
           </Route>
           <Route path="/election-tool">
             <Provider store={votingSystemStore}>
@@ -51,11 +52,8 @@ ReactDOM.render(
           </Route>          
         </Switch>
       </main>
-      {/* <aside id="sidebar">
-        Sidebar
-      </aside> */}
       <footer id="page-footer">
-        <small>A Cool Company, Inc.</small>
+        <small>Dream without Fear, Code without Limits</small>
       </footer>
     </Layout>
   </Router>,
