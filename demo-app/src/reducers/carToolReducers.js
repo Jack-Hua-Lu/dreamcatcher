@@ -2,6 +2,7 @@ import { combineReducers } from "redux";
 
 import {
   EDIT_CAR_ACTION, CANCEL_CAR_ACTION, REFRESH_CARS_DONE_ACTION,
+  
 } from '../actions/carToolActions';
 
 export const carsReducer = (cars = [], action) => {
@@ -49,3 +50,13 @@ export const carToolReducer = combineReducers({
   cars: carsReducer,
   editCarId: editCarIdReducer,
 });
+
+
+export const carToolReducer2 = (state = {}, action) => {
+  return {
+    ...state,
+    isLoading: isLoadingReducer(state.isLoading, action),
+    cars: carsReducer(state.cars, action),
+    editCarId: isLoadingReducer(state.editCarId, action),
+  };
+}

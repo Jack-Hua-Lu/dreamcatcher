@@ -16,6 +16,9 @@ import { CalcToolContainer } from './containers/CalcToolContainer';
 import { ElectionToolContainer } from './containers/ElectionContainer';
 
 import { Layout } from './components/Layout';
+import { votingSystemStore } from './stores/votingSystemStore';
+import { BallotToolContainer } from './containers/BallotToolContainer';
+
 import logo from './tm-dreamCatcher.jpg';
 
 ReactDOM.render(
@@ -32,6 +35,7 @@ ReactDOM.render(
           <li><Link to="/voter-list">Voter List</Link></li>
           <li><Link to="/calc-tool">Calc Tool</Link></li>
           <li><Link to="/election-tool">Election Tool</Link></li>
+          <li><Link to="/ballot-tool">Ballot Tool</Link></li>
         </ul>
       </nav>
       <main id="content">
@@ -44,12 +48,21 @@ ReactDOM.render(
               <ElectionToolContainer />
             </Provider>
           </Route>
-
+          <Route path="/voter-list">
+            <Provider store={voterToolStore}>
+              <VoterListContainer />
+            </Provider>
+          </Route>
           <Route path="/voter-Registration">
             <Provider store={voterToolStore}>
               <VoterRegistrationContainer />
             </Provider>
-          </Route>          
+          </Route>
+          <Route path="/ballot-tool">
+            <Provider store={votingSystemStore}>
+              <BallotToolContainer />
+            </Provider>
+          </Route>
         </Switch>
       </main>
       <footer id="page-footer">

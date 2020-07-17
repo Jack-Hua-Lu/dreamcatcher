@@ -24,7 +24,6 @@ export const refreshCars = () => {
     return fetch('http://localhost:3060/cars')
       .then(res => res.json())
       .then(cars => dispatch(createRefreshCarsDoneAction(cars)));
-
   };
 
 };
