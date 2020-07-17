@@ -32,7 +32,6 @@ ReactDOM.render(
       <main id="content">
         <Switch>
           <Route path="/" exact>
-            <img src={logo} alt="teamcatcher" />
           </Route>
           <Route path="/election-tool">
             <Provider store={electionStore}>
