@@ -8,15 +8,11 @@ import { voterToolStore } from './stores/voterToolStore';
 import { calcToolStore } from './stores/calcToolStore';
 import { electionStore } from './stores/electionStore';
 import { votingSystemStore } from './stores/votingSystemStore';
-
-import { ColorToolContainer } from './containers/ColorToolContainer';
 import { VoterRegistrationContainer } from './containers/VoterRegistrationContainer';
 import { VoterListContainer } from './containers/VoterListContainer';
-import { CalcToolContainer } from './containers/CalcToolContainer';
 import { ElectionToolContainer } from './containers/ElectionContainer';
 
 import { Layout } from './components/Layout';
-import { votingSystemStore } from './stores/votingSystemStore';
 import { BallotToolContainer } from './containers/BallotToolContainer';
 
 import logo from './tm-dreamCatcher.jpg';
@@ -44,7 +40,7 @@ ReactDOM.render(
             <img src={logo} alt="teamcatcher" />
           </Route>
           <Route path="/election-tool">
-            <Provider store={votingSystemStore}>
+            <Provider store={electionStore}>
               <ElectionToolContainer />
             </Provider>
           </Route>
