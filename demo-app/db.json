@@ -32,21 +32,49 @@
     {
       "id": 1,
       "name": "Fav Food Election",
-      "voterIds": [1, 2, 3],
+      "voterIds": [
+        1
+      ],
       "questions": [
-        { "id": 1, "question": "do you like pizza?", "yesCount": 10},
-        { "id": 2, "question": "do you like pasta?", "yesCount": 0},
-        { "id": 3, "question": "do you like icecream?", "yesCount": 1}
+        {
+          "id": 1,
+          "question": "do you like pizza?",
+          "yesCount": 10
+        },
+        {
+          "id": 2,
+          "question": "do you like pasta?",
+          "yesCount": 0
+        },
+        {
+          "id": 3,
+          "question": "do you like icecream?",
+          "yesCount": 2
+        }
       ]
     },
     {
       "id": 2,
       "name": "Fav Streaming Election",
-      "voterIds": [1, 2, 3],
+      "voterIds": [
+        2
+      ],
       "questions": [
-        { "id": 1, "question": "do you like Netflix?", "yesCount": 10},
-        { "id": 2, "question": "do you like Amazon Prime?", "yesCount": 0},
-        { "id": 3, "question": "do you like Disney+?", "yesCount": 1}
+        {
+          "id": 1,
+          "question": "do you like Netflix?",
+          "yesCount": 10
+        },
+        {
+          "id": 2,
+          "question": "do you like Amazon Prime?",
+          "yesCount": 0
+        },
+        {
+          "id": 3,
+          "question": "do you like Disney+?",
+          "yesCount": 1
+        }
       ]
     }
   ],
