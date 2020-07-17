@@ -26,10 +26,8 @@ ReactDOM.render(
       <nav id="menu">
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/color-tool">Color Tool</Link></li>
           <li><Link to="/voter-registration">Voter Registration</Link></li>
           <li><Link to="/voter-list">Voter List</Link></li>
-          <li><Link to="/calc-tool">Calc Tool</Link></li>
           <li><Link to="/election-tool">Election Tool</Link></li>
           <li><Link to="/ballot-tool">Ballot Tool</Link></li>
         </ul>
