@@ -14,6 +14,7 @@ export const VoterList = ({
   onDeleteVoter: deleteVoter, onEditVoter: editVoter,
   onCancelVoter: cancelVoter,
   onDeleteVoters: deleteVoters,
+  onSetSortColName: setSortColName,
 }) => {
 
   return (
@@ -22,7 +23,8 @@ export const VoterList = ({
       <VoterTable voters={voters} editVoterId={editVoterId}
         onEditVoter={editVoter} onDeleteVoter={deleteVoter}
         onSaveVoter={saveVoter} onCancelVoter={cancelVoter}
-        onDeleteVoters={deleteVoters} />
+        onDeleteVoters={deleteVoters} onSetSortColName={setSortColName}
+        />
     </div>
   );
 

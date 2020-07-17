@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import {
   saveVoter, deleteVoter, createEditVoterAction,
-  createCancelVoterAction, refreshVoters, deleteVoters
+  createCancelVoterAction, refreshVoters, deleteVoters, createSetSortColumnNameAction
 } from '../actions/voterToolActions';
 
 import { VoterList } from '../components/VoterList';
@@ -12,7 +12,22 @@ import { LoadingModal } from '../components/LoadingModal';
 
 export const VoterListContainer = () => {
 
-  const stateProps = useSelector(state => state);
+  const [voters, isLoading] = useSelector(state => {
+
+    const sortColName = state.sortColName;
+    console.log("calling setSortColName");
+    const votersCopy =
+      state.voters.concat().sort(function (a, b) {
+        if (a[sortColName] < b[sortColName]) {
+          return -1;
+        } else if (a[sortColName] > b[sortColName]) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+    return [votersCopy, state.isLoading];
+  });
 
   const dispatch = useDispatch();
 
@@ -23,17 +38,18 @@ export const VoterListContainer = () => {
     onEditVoter: createEditVoterAction,
     onCancelVoter: createCancelVoterAction,
     onDeleteVoters: deleteVoters,
-  }, dispatch), [ dispatch ]);
+    onSetSortColName: createSetSortColumnNameAction,
+  }, dispatch), [dispatch]);
 
   useEffect(() => {
 
     dispatchProps.onRefreshVoters();
 
-  }, [ dispatchProps ]);
+  }, [dispatchProps]);
 
 
   return <>
-    <VoterList {...dispatchProps} {...stateProps} />
-    <LoadingModal isLoading={stateProps.isLoading} />
+    <VoterList {...dispatchProps} voters={voters} />
+    <LoadingModal isLoading={isLoading} />
   </>;
 };

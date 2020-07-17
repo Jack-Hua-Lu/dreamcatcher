@@ -8,6 +8,8 @@ export const DELETE_VOTERS_REQUEST_ACTION = 'DELETE_VOTERS_REQUEST';
 export const EDIT_VOTER_ACTION = 'EDIT_VOTER';
 export const CANCEL_VOTER_ACTION = 'CANCEL_VOTER';
 
+export const SET_SORT_COLUMN_ACTION = 'SET_SORT_COLUMN';
+
 export const createRefreshVotersRequestAction = () => ({
   type: REFRESH_VOTERS_REQUEST_ACTION,
 });
@@ -91,17 +93,33 @@ export const deleteVoter = voterId => {
 export const createDeleteVotersRequestAction = voterIds =>
   ({ type: DELETE_VOTERS_REQUEST_ACTION, voterIds });
 
-export const deleteVoters = voterIds => {
-  console.log("calling deleteVotes");
-  return dispatch => {
-    voterIds.forEach(voterId => deleteVoter(voterId));
-  };
-};
+// export const deleteVoters = voterIds => {
+//   console.log("calling deleteVoters");
+//   return dispatch => {
+//     dispatch(createDeleteVotersRequestAction(voterIds));
+//     voterIds.forEach(voterId => deleteVoter(voterId));
+//   };
+// };
 
 // export const deleteVoters = voterIds => {
 //   console.log("calling deleteVoters");
 //   voterIds.forEach(voterId => deleteVoter(voterId));
 // };
+
+export const createSetSortColumnNameAction = (sortColName) =>
+  ({ type: SET_SORT_COLUMN_ACTION, sortColName });
+
+export const deleteVoters = voterIds => {
+  console.log("calling deleteVoters");
+  return dispatch => {
+    dispatch(createDeleteVotersRequestAction(voterIds));
+    Promise.all(voterIds.map(voteId =>
+      fetch(serverURL + encodeURIComponent(voteId), {
+        method: 'DELETE',
+      }).then(() => dispatch(refreshVoters()))
+    ));
+  }
+};
 
 export const createEditVoterAction = voterId =>
   ({ type: EDIT_VOTER_ACTION, voterId });

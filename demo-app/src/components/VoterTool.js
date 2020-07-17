@@ -11,7 +11,8 @@ export const VoterTool = ({
   onAddVoter: addVoter, onSaveVoter: saveVoter,
   onDeleteVoter: deleteVoter, onEditVoter: editVoter,
   onCancelVoter: cancelVoter, 
-  onDeleteVoters: deleteVoters
+  onDeleteVoters: deleteVoters,
+  setSortColName,
 }) => {
 
   return (
@@ -20,7 +21,7 @@ export const VoterTool = ({
       <VoterTable voters={voters} editVoterId={editVoterId}
         onEditVoter={editVoter} onDeleteVoter={deleteVoter}
         onSaveVoter={saveVoter} onCancelVoter={cancelVoter} 
-        onDeleteVoters={deleteVoters}
+        onDeleteVoters={deleteVoters} setSortColName={setSortColName}
         />
       <VoterForm buttonText="Add Voter" onSubmitVoter={addVoter} />
     </div>

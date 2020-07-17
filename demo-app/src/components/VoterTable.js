@@ -11,8 +11,10 @@ export const VoterTable = ({
   onSaveVoter: saveVoter,
   onCancelVoter: cancelVoter,
   onDeleteVoters,
+  onSetSortColName: setSortColName,
 }) => {
 
+  //const [sortedField, setSortedField] = useState([]);
 
   const [selectedIds, setSelectedIds] = useState([]);
 
@@ -26,23 +28,26 @@ export const VoterTable = ({
       : setSelectedIds(selectedIds.filter(id => id !== voterId));
   };
 
+  // const sortListBy = (sortColName) => {
+  //   console.log("sorting the table by." + sortColName + ". Voters:" + voters);
+  //   voters = ["a"];
+  // }
+
   console.log(selectedIds);
 
   return (
     <>
-    <button type="button" onClick={deleteVoters}>Deleted Selected</button>
-
     <table>
       <thead>
         <tr>
-          <th>Id</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Address</th>
-          <th>City</th>
-          <th>Birthday</th>
-          <th>Email</th>
-          <th>Phone</th>
+        <th><a href="#" onClick={() => setSortColName('id')}>ID</a></th>
+          <th><a href="#" onClick={() => setSortColName('firstName')}>First Name</a></th>
+          <th><a href="#" onClick={() => setSortColName('lastName')}>Last Name</a></th>
+          <th><a href="#" onClick={() => setSortColName('address')}>Address</a></th>
+          <th><a href="#" onClick={() => setSortColName('city')}>City</a></th>
+          <th><a href="#" onClick={() => setSortColName('Birthdate')}>Birthday</a></th>
+          <th><a href="#" onClick={() => setSortColName('email')}>Email</a></th>
+          <th><a href="#" onClick={() => setSortColName('phone')}>Phone #</a></th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -55,7 +60,8 @@ export const VoterTable = ({
               : <VoterViewRow key={voter.id} voter={voter}
                   onEditVoter={editVoter} onDeleteVoter={deleteVoter} selected={selectedIds.includes(voter.id)} onSelectVoter={selectVoter} />)}
       </tbody>
-    </table>
+    </table> 
+    <button type="button" onClick={deleteVoters}>Delete Voters</button>
     </>
   );
 

@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
 import {
-  EDIT_VOTER_ACTION, CANCEL_VOTER_ACTION, REFRESH_VOTERS_DONE_ACTION,
+  EDIT_VOTER_ACTION, CANCEL_VOTER_ACTION, REFRESH_VOTERS_DONE_ACTION, SET_SORT_COLUMN_ACTION
 } from '../actions/voterToolActions';
 
 export const votersReducer = (voters = [], action) => {
@@ -45,7 +45,16 @@ export const isLoadingReducer = (isLoading = false, action) => {
   return isLoading;
 };
 
+export const sortColNameReducer = (sortColName = "id", action) => {
+  if (action.type === SET_SORT_COLUMN_ACTION) {
+    return action.sortColName;
+  }
+
+  return sortColName;
+};
+
 export const voterToolReducer = combineReducers({
+  sortColName: sortColNameReducer,
   isLoading: isLoadingReducer,
   voters: votersReducer,
   editVoterId: editVoterIdReducer,
