@@ -32,21 +32,23 @@ export const BallotTool =({election, voter, saveBallot}) => {
 
     return (<>
         {(showSuccessScreen === true) ? 
-        <div>
+        <div className="pageHeader">
             <h1> Congratulations, You Voted </h1>
             <button onClick={() => history.push('/')}> Return to Home </button>
         </div> 
-        : <div>
-        <div>Election name : {election.name}</div>
-        <form>
-            {election.questions.map( q => 
-                <div key={q.id}>
-                    {q.question} 
-                    <input type="checkbox" key={q.id} caption={q.question} name={q.id} 
-                     onChange={(e) => onCheckboxClick(e.target.value, q.id)} />
-                </div>)}
-            <button type="button" onClick={() =>onSubmitVote()}>Cast Vote</button>
-        </form>
+        : <div className="selections">
+            <div className="pageHeader">Election name : {election.name}</div>
+            <div className="itemSelections">
+            <form className="formGrid">
+                {election.questions.map( q => 
+                    <div className="inputBox" key={q.id}>
+                        {q.question} 
+                        <input className="inputCheckBox" type="checkbox" key={q.id} caption={q.question} name={q.id} 
+                        onChange={(e) => onCheckboxClick(e.target.value, q.id)} />
+                    </div>)}
+                <button className="submitButton" type="button" onClick={() =>onSubmitVote()}>Cast Vote</button>
+            </form>
+            </div>
         </div>}
         </>
     )

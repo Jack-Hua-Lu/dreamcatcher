@@ -1,14 +1,19 @@
 :root {
   font-family: arial;
+  background-image: url('https://i.pinimg.com/originals/45/7c/d3/457cd30ba190860670a354790f139913.jpg');
 }
 
 #page-header, #page-footer {
-  background-color: navy;
+  background-color: rgb(105, 105, 212);
   color: white;
 }
 
 #page-header {
   font-size: 3rem;
+}
+
+#errorMsg {
+  color: darkred
 }
 
 #page-header > h1 {
@@ -37,3 +42,8 @@
   text-decoration: underline;
 }
 
+
+.pageHeader {
+  font-size: 3rem;
+  font-weight: bold;
+}
