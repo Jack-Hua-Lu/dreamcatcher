@@ -82,7 +82,12 @@ export const saveBallot = ballot => {
     
     dispatch(createSaveBallotRequestAction(ballot));
     // need to create a payload  object
-    const  payload = ballot;
+    const  payload =  {
+        id: ballot.electionId,
+        name: ballot.name,
+        voterIds: ballot.voterIds,
+        questions: ballot.questions
+    }
 
     return fetch('http://localhost:3060/elections/' + encodeURIComponent(ballot.electionId), {
       method: 'PUT',
@@ -97,8 +102,8 @@ export const createEditElectionId = electionId =>
   ({ type: EDIT_ELECTION_ID_ACTION, electionId });
 
 
-export const createEditVoterId = verified => 
-({ type: EDIT_VOTER_ID_ACTION, verified });
+export const createEditVoterId = voterId => 
+({ type: EDIT_VOTER_ID_ACTION, voterId });
 
 
 export const setErrorMessage = message => 

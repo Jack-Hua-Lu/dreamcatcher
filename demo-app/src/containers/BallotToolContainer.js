@@ -18,7 +18,7 @@ export const BallotToolContainer = () => {
   const stateProps = useSelector(state => state);
   // voterVerified and validForVoting
   const electionId = useSelector(state => state.ballotTool.electionId);
-  const voterVerified = useSelector(state => state.ballotTool.voterId);
+  const voterId = useSelector(state => state.ballotTool.voterId);
   const errorMessage = useSelector(state => state.ballotTool.errorMessage);
   const dispatch = useDispatch();
   
@@ -45,13 +45,13 @@ export const BallotToolContainer = () => {
   console.log(electionId);
 
   const verifyVoterId = (voterId, electionId) => {
-      if(voters.find(v => v.id === voterId)){
-        dispatchProps.setErrorMessage("Invalid voter id" + voterId);  
+      if(!voters.find(v => v.id === voterId)){
+            dispatchProps.onSetErrorMessage("Invalid voter id " + voterId);  
         return false;        
       }
       const election = elections.find(e => e.id === electionId);
-      if(election.voters.includes(voterId)) {
-        dispatchProps.setErrorMessage("You've already voted for this election" + voterId);      
+      if(election.voterIds.includes(voterId)) {
+        dispatchProps.onSetErrorMessage("You've already voted for this election " + election.name);      
         return false;    
       }
       dispatchProps.onSaveVoterId(voterId);
@@ -62,7 +62,7 @@ export const BallotToolContainer = () => {
     { 
         (electionId < 1) ? 
         <BallotSelection elections={elections} electionId={electionId} saveElectionId={dispatchProps.onSaveElectionId}/>
-        : ((voterVerified > 0) ? <BallotTool  election={elections.find(e => e.id === electionId)} voters={voters}/>
+        : ((voterId > 0) ? <BallotTool  election={elections.find(e => e.id === electionId)} voter={voters.find(v => v.id === voterId)} saveBallot={dispatchProps.onSaveBallot}/>
         :  <BallotVoterVerification election={elections.find(e => e.id === electionId)} verifyVoter={verifyVoterId} errorMsg={errorMessage} />)
     }
   </>;

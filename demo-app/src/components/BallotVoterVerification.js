@@ -9,17 +9,16 @@ export const BallotVoterVerification = ({election, verifyVoter, errorMsg}) => {
     
       const submitVoterIdForm = () => {
         verifyVoter(voterIdForm.voterId, election.id);
-        resetVoterIdForm();
       };
 
     return <>
         <div>
-            { errorMsg && <h2 id="errorMsg"> {errorMsg} </h2>}
+            { (errorMsg !== -1) && <h2 id="errorMsg"> {errorMsg} </h2>}
         </div>
         <form>
             <NumberFormControl caption="voterId" name="voterId"
             value={voterIdForm.voterId} onChange={change} />
-        <button type="button" onClick={submitVoterIdForm}>Verify</button>
+            <button type="button" onClick={() => submitVoterIdForm()}>Verify</button>
         </form>
     </>
-}
+};

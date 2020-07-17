@@ -91,5 +91,6 @@ export const ballotToolReducer = combineReducers({
   electionId: electionIdReducer,
   voterId: voterIdReducer,
   elections: electionsReducer,
+  errorMessage: errorMessageReducer,
   voters: votersReducer,
 });
