@@ -20,15 +20,13 @@ ReactDOM.render(
   <Router>
     <Layout>
       <header id="page-header">
-        <h1>App Tools</h1>
+        <h1>Welcome to e-voting system </h1>
       </header>
       <nav id="menu">
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/color-tool">Color Tool</Link></li>
           <li><Link to="/voter-registration">Voter Registration</Link></li>
           <li><Link to="/voter-list">Voter List</Link></li>
-          <li><Link to="/calc-tool">Calc Tool</Link></li>
           <li><Link to="/ballot-tool">Ballot Tool</Link></li>
         </ul>
       </nav>
@@ -36,11 +34,6 @@ ReactDOM.render(
         <Switch>
           <Route path="/" exact>
             <div>Home</div>
-          </Route>
-          <Route path="/color-tool">
-            <Provider store={colorToolStore}>
-              <ColorToolContainer />
-            </Provider>
           </Route>
           <Route path="/voter-list">
             <Provider store={voterToolStore}>
@@ -52,11 +45,6 @@ ReactDOM.render(
               <VoterRegistrationContainer />
             </Provider>
           </Route>          
-          <Route path="/calc-tool">
-            <Provider store={calcToolStore}>
-              <CalcToolContainer />
-            </Provider>
-          </Route>
           <Route path="/ballot-tool">
             <Provider store={votingSystemStore}>
               <BallotToolContainer />
