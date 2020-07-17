@@ -6,6 +6,8 @@ import {
 
 export const electionReducer = (elections = [], action) => {
 
+  console.log("in electionToolReducer +  " + action.type);
+
   if (action.type === REFRESH_ELECTIONS_DONE_ACTION) {
     return action.elections;
   }

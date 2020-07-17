@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import { colorToolStore } from './stores/colorToolStore';
-import { voterToolStore } from './stores/voterToolStore';
-import { calcToolStore } from './stores/calcToolStore';
 import { electionStore } from './stores/electionStore';
 import { votingSystemStore } from './stores/votingSystemStore';
 import { VoterRegistrationContainer } from './containers/VoterRegistrationContainer';
@@ -26,10 +23,8 @@ ReactDOM.render(
       <nav id="menu">
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/color-tool">Color Tool</Link></li>
           <li><Link to="/voter-registration">Voter Registration</Link></li>
           <li><Link to="/voter-list">Voter List</Link></li>
-          <li><Link to="/calc-tool">Calc Tool</Link></li>
           <li><Link to="/election-tool">Election Tool</Link></li>
           <li><Link to="/ballot-tool">Ballot Tool</Link></li>
         </ul>
@@ -45,12 +40,12 @@ ReactDOM.render(
             </Provider>
           </Route>
           <Route path="/voter-list">
-            <Provider store={voterToolStore}>
+            <Provider store={votingSystemStore}>
               <VoterListContainer />
             </Provider>
           </Route>
           <Route path="/voter-Registration">
-            <Provider store={voterToolStore}>
+            <Provider store={votingSystemStore}>
               <VoterRegistrationContainer />
             </Provider>
           </Route>
