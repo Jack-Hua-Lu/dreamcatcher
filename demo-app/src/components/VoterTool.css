@@ -1,0 +1,60 @@
+
+.voter-tool header {
+  margin-top: 50px;
+}
+
+.voter-tool table {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.voter-tool form {
+  margin-top: 20px;
+}
+
+.voter-tool form div {
+  margin: 8px;
+}
+
+.voter-tool form label {
+  display: inline-block;
+  width: 100px;
+}
+
+.voter-tool thead th, .voter-tool tbody td {
+  padding: 4px;
+}
+
+.voter-tool thead th {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 1px solid black;
+}
+
+.voter-tool tbody td.number {
+  text-align: right;
+}
+
+.voter-tool tbody td.text {
+  text-align: left;
+}
+
+.voter-tool tbody td {
+  text-align: center;
+}
+
+.voter-tool tbody > tr:nth-child(even) {
+  background-color: lightblue;
+}
+
+.voter-tool tbody > tr:hover {
+  background-color: lightyellow;
+}
+
+.voter-tool form input {
+  width: 100px;
+  border: 1px solid slategray;
+  border-radius: 5px;
+  padding: 4px;
+  outline: none;
+}

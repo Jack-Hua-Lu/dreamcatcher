@@ -1,19 +1,53 @@
 {
-  "colors": [
+  "voters": [
     {
       "id": 1,
-      "name": "red",
-      "hexcode": "#ff0000"
+      "firstName": "Vijeth",
+      "lastName": "Patil",
+      "city": "Mountain View",
+      "birthDate": "07/10/1986",
+      "emailAddress": "vijeth@intuit.com",
+      "phone": "6509446000"
     },
     {
       "id": 2,
-      "name": "green",
-      "hexcode": "#00ff00"
+      "firstName": "Jack",
+      "lastName": "Lu",
+      "city": "Mountain View",
+      "birthDate": "07/10/1986",
+      "emailAddress": "jack@intuit.com",
+      "phone": "6509446001"
     },
     {
-      "name": "blue",
-      "hexcode": "#0000ff",
-      "id": 4
+      "id": 3,
+      "firstName": "Vijeth",
+      "lastName": "Patil",
+      "city": "Mountain View",
+      "birthDate": "07/10/1986",
+      "emailAddress": "dwijen@intuit.com",
+      "phone": "6509446002"
+    }
+  ],
+  "elections": [
+    {
+      "id": 1,
+      "name": "Fav Food Election",
+      "voterIds": [1, 2, 3],
+      "questions": [
+        { "id": 1, "question": "do you like pizza?", "yesCount": 10},
+        { "id": 2, "question": "do you like pasta?", "yesCount": 0},
+        { "id": 3, "question": "do you like icecream?", "yesCount": 1}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Fav Food Election",
+      "voterIds": [1, 2, 3],
+      "questions": [
+        { "id": 1, "question": "do you like pizza?", "yesCount": 10},
+        { "id": 2, "question": "do you like pasta?", "yesCount": 0},
+        { "id": 3, "question": "do you like icecream?", "yesCount": 1}
+      ]
     }
   ],
   "elections": [
