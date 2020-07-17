@@ -16,11 +16,16 @@ import { Layout } from './components/Layout';
 import { votingSystemStore } from './stores/votingSystemStore';
 import { BallotToolContainer } from './containers/BallotToolContainer';
 
+import logo from './tm-dreamCatcher.jpg';
+
+
 ReactDOM.render(
   <Router>
     <Layout>
       <header id="page-header">
-        <h1>Welcome to e-voting system </h1>
+
+        <h1>Voting Tools</h1>
+
       </header>
       <nav id="menu">
         <ul>
@@ -33,7 +38,7 @@ ReactDOM.render(
       <main id="content">
         <Switch>
           <Route path="/" exact>
-            <div>Home</div>
+            <img src={logo} alt="teamcatcher" />
           </Route>
           <Route path="/voter-list">
             <Provider store={voterToolStore}>
@@ -53,10 +58,10 @@ ReactDOM.render(
         </Switch>
       </main>
       <aside id="sidebar">
-        Sidebar
+        
       </aside>
       <footer id="page-footer">
-        <small>A Cool Company, Inc.</small>
+        <small>Dream without Fear, Code without Limits</small>
       </footer>
     </Layout>
   </Router>,
