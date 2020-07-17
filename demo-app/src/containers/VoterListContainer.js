@@ -12,7 +12,7 @@ import { LoadingModal } from '../components/LoadingModal';
 
 export const VoterListContainer = () => {
 
-  const [voters, isLoading] = useSelector(state => {
+  const [voters, isLoading, editVoterId] = useSelector(state => {
 
     const sortColName = state.sortColName;
     console.log("calling setSortColName");
@@ -26,7 +26,7 @@ export const VoterListContainer = () => {
           return 0;
         }
       });
-    return [votersCopy, state.isLoading];
+    return [votersCopy, state.isLoading, state.editVoterId];
   });
 
   const dispatch = useDispatch();
@@ -49,7 +49,7 @@ export const VoterListContainer = () => {
 
 
   return <>
-    <VoterList {...dispatchProps} voters={voters} />
+    <VoterList {...dispatchProps} voters={voters} editVoterId={editVoterId} />
     <LoadingModal isLoading={isLoading} />
   </>;
 };
