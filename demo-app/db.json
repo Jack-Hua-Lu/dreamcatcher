@@ -5,6 +5,7 @@
       "firstName": "Vijeth",
       "lastName": "Patil",
       "city": "Mountain View",
+      "address": "111 main st.",
       "birthDate": "07/10/1986",
       "emailAddress": "vijeth@intuit.com",
       "phone": "6509446000"
@@ -14,6 +15,7 @@
       "firstName": "Jack",
       "lastName": "Lu",
       "city": "Mountain View",
+      "address": "111 main st.",
       "birthDate": "07/10/1986",
       "emailAddress": "jack@intuit.com",
       "phone": "6509446001"
@@ -23,6 +25,7 @@
       "firstName": "Vijeth",
       "lastName": "Patil",
       "city": "Mountain View",
+      "address": "111 main st.",
       "birthDate": "07/10/1986",
       "emailAddress": "dwijen@intuit.com",
       "phone": "6509446002"
