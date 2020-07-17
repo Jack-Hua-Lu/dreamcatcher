@@ -18,7 +18,7 @@ ReactDOM.render(
   <Router>
     <Layout>
       <header id="page-header">
-        <h1>Voting Tools</h1>
+        <h1>Dream Voting System</h1>
       </header>
       <nav id="menu">
         <ul>
