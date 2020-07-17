@@ -1,29 +1,32 @@
-export const REFRESH_ELECTION_REQUEST_ACTION = 'REFRESH_ELECTION_REQUEST';
-export const REFRESH_ELECTION_DONE_ACTION = 'REFRESH_ELECTION_DONE';
+import React, {useState} from 'react';
+//import {modEelections} from '../hooks/modElections'
+export const REFRESH_ELECTIONS_REQUEST_ACTION = 'REFRESH_ELECTIONS_REQUEST';
+export const REFRESH_ELECTIONS_DONE_ACTION = 'REFRESH_ELECTIONS_DONE';
 
 export const ADD_ELECTION_REQUEST_ACTION = 'ADD_ELECTION_REQUEST';
-export const SAVE_ELECTION_REQUEST_ACTION = 'SAVE_ELECTION_REQUEST';
+export const ADD_QUESTION_ACTION = 'ADD_QUESTION';
+export const SHOW_ELECTION_ID_SUMMARY_ACTION = 'SHOW_ELECTION_ID_SUMMARY_QUESTION';
 export const DELETE_CAR_REQUEST_ACTION = 'DELETE_ELECTION_REQUEST';
 // export const EDIT_CAR_ACTION = 'EDIT_CAR';
 // export const CANCEL_CAR_ACTION = 'CANCEL_CAR';
 
-export const createRefreshElectionRequestAction = () => ({
-  type: REFRESH_ELECTION_REQUEST_ACTION,
+export const createRefreshElectionsRequestAction = () => ({
+  type: REFRESH_ELECTIONS_REQUEST_ACTION,
 });
 
-export const createRefreshElectionDoneAction = elections => ({
-  type: REFRESH_ELECTION_DONE_ACTION,
+export const createRefreshElectionsDoneAction = elections => ({
+  type: REFRESH_ELECTIONS_DONE_ACTION,
   elections,
 });
 
-export const refreshElection = () => {
+export const refreshElections = () => {
 
   return dispatch => {
 
-    dispatch(createRefreshElectionRequestAction());
+    dispatch(createRefreshElectionsRequestAction());
     return fetch('http://localhost:3060/elections')
       .then(res => res.json())
-      .then(elections => dispatch(createRefreshElectionDoneAction(elections)));
+      .then(elections => dispatch(createRefreshElectionsDoneAction(elections)));
 
   };
 
@@ -33,60 +36,36 @@ export const createAddElectionRequestAction = elections =>
   ({ type: ADD_ELECTION_REQUEST_ACTION, elections });
 
 
-export const addElection = elections => {
+export const addElection = election => {
 
+  const newElection = {
+    name: election.name,
+    voterIds: [],
+    questions: election.question.map( (q, i) => ({ id: i +1, question: q, yesCount: 0 }))
+  };
+
+  console.log(JSON.stringify(newElection));
+
+  console.log(JSON.stringify(election));
   return dispatch => {
-
-    dispatch(createAddElectionRequestAction(elections));
+    dispatch(createAddElectionRequestAction(newElection));
     return fetch('http://localhost:3060/elections', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(elections),
+      body: JSON.stringify(newElection),
     })
-      .then(() => dispatch(refreshElection()));
-
+      .then(() => dispatch(refreshElections()));
   };
+
+  
 
 };
 
+export const createAddQuestionAction = question =>
+  ({ type: ADD_QUESTION_ACTION, question });
 
-export const createSaveElectionRequestAction = elections =>
-  ({ type: SAVE_ELECTION_REQUEST_ACTION, elections });
+export const createShowElectionIdSummaryAction = (electionId) =>
+  ({ type: SHOW_ELECTION_ID_SUMMARY_ACTION, electionId });
 
-export const saveElection = elections => {
 
-  return dispatch => {
-
-    dispatch(createSaveElectionRequestAction(elections));
-    return fetch('http://localhost:3060/elections/' + encodeURIComponent(elections.id), {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(elections),
-    })
-      .then(() => dispatch(refreshElection()));
-
-  };
-  
-}
-
-// export const createDeleteCarRequestAction = carId =>
-//   ({ type: DELETE_CAR_REQUEST_ACTION, carId });
-
-// export const deleteCar = carId => {
-
-//   return dispatch => {
-
-//     dispatch(createDeleteCarRequestAction(carId));
-//     return fetch('http://localhost:3060/cars/' + encodeURIComponent(carId), {
-//       method: 'DELETE',
-//     })
-//       .then(() => dispatch(refreshCars()));
-
-//   };
-  
-// };
-  
-// export const createEditCarAction = carId =>
-//   ({ type: EDIT_CAR_ACTION, carId });
-// export const createCancelCarAction = () =>
-//   ({ type: CANCEL_CAR_ACTION });
+ 

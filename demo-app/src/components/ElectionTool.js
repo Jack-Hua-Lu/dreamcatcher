@@ -8,15 +8,20 @@ import "./CarTool.css";
 
 export const ElectionTool = ({
   elections, 
+  questions,
   onAddElection: addElection,
-  onSaveElection: saveElection,
+  onAddQuestion: addQuestion,
+  onShowElectionIdSummary: showElectionIdSummary,
+  electionResults
+  //onSaveElection: saveElection,
 }) => {
-  console.log(elections);
   return (
     <div className="car-tool">
       <ToolHeader headerText="Create a Election" />
-      <ElectionForm buttonText="Add Election" onSubmitElection={addElection} />
-      <ElectionTable elections={elections} />
+      <ElectionForm buttonText="Add Election" onSubmitElection={addElection} 
+      questions={questions}
+      onAddQuestion={addQuestion} />
+      <ElectionTable elections={elections} electionResults={electionResults} onShowElectionIdSummary={showElectionIdSummary} />
     </div>
   );
 

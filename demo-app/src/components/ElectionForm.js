@@ -1,35 +1,57 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, {useState} from 'react';
 
-import {
-  StringFormControl,
-  NumberFormControl,
-} from './FormControls';
-import { useForm } from '../hooks/useForm';
-
-export const ElectionForm = ({ buttonText, onSubmitElection }) => {
-
-  const [ electionForm, change, resetelectionForm ] = useForm({
-    electionName: '',
-    question: '',
-    options: '',
-  });
+export const ElectionForm = ({ buttonText, onSubmitElection , questions ,onAddQuestion}) => {
 
   const submitCar = () => {
+    electionForm.question = questions;
     onSubmitElection(electionForm);
     resetelectionForm();
   };
+  const resetelectionForm =(electionForm) =>{
+    // electionForm.name= ' ';
+    // electionForm.question= ' ';
+  };
+  const [ electionForm, setForm ] = useState({
+       name: '',
+       question: '',
+  });
+  const change = (e) => {
+    setForm({
+      ...electionForm,
+      [ e.target.name ]: e.target.value,
+    });
+  }; 
+  
+  const addQuestion = () => {
+
+    onAddQuestion(electionForm.question);
+
+    setForm({
+      ...electionForm,
+      question: '',
+    });
+  }
 
   return (
     <form>
-      <StringFormControl caption="Election Name" name="electionName"
-        value={electionForm.electionName} onChange={change} />
-      <StringFormControl caption="Question" name="question"
-        value={electionForm.question} onChange={change} />
-      <StringFormControl caption="Options" name="options"
-      value={electionForm.options} onChange={change} />
-    
-      <button type="button" onClick={submitCar}>{buttonText}</button>
+      {/* <div>Hi..!!{electionForm.question}</div> */}
+      <div>
+        <lable> Name          :</lable>
+        <input type="text" onChange={change} name="name" ></input>
+      </div>
+      <div>
+        <lable>  Ques          :  </lable>
+        <input type="text" name="question" onChange={change} value={electionForm.question}></input>
+      </div>
+      <div>
+        <lable>List of questions :</lable>
+        <ul>
+          {questions.map(question => <li key={question}>{question}</li>)}
+        </ul>
+      </div>
+      <button type="button" onClick={()=>{ addQuestion() }}>Add Question</button>
+      
+      <button type="button" onClick={submitCar}>Save Election</button>
     </form>
   )
 

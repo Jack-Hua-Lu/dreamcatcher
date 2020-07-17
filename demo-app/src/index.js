@@ -7,11 +7,12 @@ import { colorToolStore } from './stores/colorToolStore';
 import { carToolStore } from './stores/carToolStore';
 import { calcToolStore } from './stores/calcToolStore';
 import { electionStore } from './stores/electionStore';
+import { votingSystemStore } from './stores/votingSystemStore';
 
 import { ColorToolContainer } from './containers/ColorToolContainer';
 import { CarToolContainer } from './containers/CarToolContainer';
 import { CalcToolContainer } from './containers/CalcToolContainer';
-import { ElectionToolContainer } from './containers/ElectionConatiner';
+import { ElectionToolContainer } from './containers/ElectionContainer';
 
 import { Layout } from './components/Layout';
 
@@ -46,8 +47,14 @@ ReactDOM.render(
             </Provider>
           </Route>
 
-          <Route path="/election-tool">
+          {/* <Route path="/election-tool">
             <Provider store={electionStore}>
+              <ElectionToolContainer />
+            </Provider>
+          </Route> */}
+
+          <Route path="/election-tool">
+            <Provider store={votingSystemStore}>
               <ElectionToolContainer />
             </Provider>
           </Route>
