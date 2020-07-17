@@ -20,14 +20,14 @@ ReactDOM.render(
   <Router>
     <Layout>
       <header id="page-header">
-        <h1>App Tools</h1>
+        <h1>Voting Tools</h1>
       </header>
       <nav id="menu">
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/color-tool">Color Tool</Link></li>
+          {/* <li><Link to="/color-tool">Color Tool</Link></li>
           <li><Link to="/car-tool">Car Tool</Link></li>
-          <li><Link to="/calc-tool">Calc Tool</Link></li>
+          <li><Link to="/calc-tool">Calc Tool</Link></li> */}
           <li><Link to="/election-tool">Election Tool</Link></li>
         </ul>
       </nav>
@@ -36,7 +36,7 @@ ReactDOM.render(
           <Route path="/" exact>
             <div>Home</div>
           </Route>
-          <Route path="/color-tool">
+          {/* <Route path="/color-tool">
             <Provider store={colorToolStore}>
               <ColorToolContainer />
             </Provider>
@@ -45,7 +45,7 @@ ReactDOM.render(
             <Provider store={carToolStore}>
               <CarToolContainer />
             </Provider>
-          </Route>
+          </Route> */}
 
           {/* <Route path="/election-tool">
             <Provider store={electionStore}>
@@ -59,16 +59,16 @@ ReactDOM.render(
             </Provider>
           </Route>
 
-          <Route path="/calc-tool">
+          {/* <Route path="/calc-tool">
             <Provider store={calcToolStore}>
               <CalcToolContainer />
             </Provider>
-          </Route>
+          </Route> */}
         </Switch>
       </main>
-      <aside id="sidebar">
+      {/* <aside id="sidebar">
         Sidebar
-      </aside>
+      </aside> */}
       <footer id="page-footer">
         <small>A Cool Company, Inc.</small>
       </footer>
