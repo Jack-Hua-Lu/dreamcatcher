@@ -39,10 +39,10 @@ export const CarTable = ({
 
 };
 
-CarTable.defaultProps = {
-  cars: [],
-};
+// CarTable.defaultProps = {
+//   cars: [],
+// };
 
-CarTable.propTypes = {
-  cars: carsPropTypes,
-};
+// CarTable.propTypes = {
+//   cars: carsPropTypes,
+// };
