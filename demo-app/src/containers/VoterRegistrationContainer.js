@@ -11,7 +11,7 @@ import { LoadingModal } from '../components/LoadingModal';
 
 export const VoterRegistrationContainer = () => {
 
-  const stateProps = useSelector(state => state);
+  const stateProps = useSelector(state => state.votingTool);
 
   const dispatch = useDispatch();
 

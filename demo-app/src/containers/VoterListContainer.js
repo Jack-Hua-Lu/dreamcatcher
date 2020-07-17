@@ -14,10 +14,10 @@ export const VoterListContainer = () => {
 
   const [voters, isLoading, editVoterId] = useSelector(state => {
 
-    const sortColName = state.sortColName;
+    const sortColName = state.votingTool.sortColName;
     console.log("calling setSortColName");
     const votersCopy =
-      state.voters.concat().sort(function (a, b) {
+      state.votingTool.voters.concat().sort(function (a, b) {
         if (a[sortColName] < b[sortColName]) {
           return -1;
         } else if (a[sortColName] > b[sortColName]) {
@@ -26,7 +26,7 @@ export const VoterListContainer = () => {
           return 0;
         }
       });
-    return [votersCopy, state.isLoading, state.editVoterId];
+    return [votersCopy, state.votingTool.isLoading, state.votingTool.editVoterId];
   });
 
   const dispatch = useDispatch();

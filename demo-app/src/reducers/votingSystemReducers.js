@@ -1,5 +1,7 @@
 import { combineReducers } from "redux";
 import { ballotToolReducer } from './ballotToolReducers';
+import { electionToolReducer } from "./electionReducers";
+import { voterToolReducer} from "./voterToolReducers";
 // import {
 //   EDIT_CAR_ACTION, CANCEL_CAR_ACTION, REFRESH_CARS_DONE_ACTION,
 // } from '../actions/carToolActions';
@@ -26,5 +28,7 @@ export const isLoadingReducer = (isLoading = false, action) => {
 export const votingSystemReducer = combineReducers({
   isLoading: isLoadingReducer,
   ballotTool: ballotToolReducer,
+  electionTool: electionToolReducer,
+  votingTool: voterToolReducer,
     //add your reducers here
 });
