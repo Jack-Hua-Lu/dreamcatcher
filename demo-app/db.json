@@ -46,16 +46,13 @@
       "id": 1,
       "name": "Fav Food Election",
       "voterIds": [
-        1,
-        2,
-        3,
-        4
+        1
       ],
       "questions": [
         {
           "id": 1,
           "question": "do you like pizza?",
-          "yesCount": 10
+          "yesCount": 1
         },
         {
           "id": 2,
@@ -73,15 +70,13 @@
       "id": 2,
       "name": "Fav Food Election",
       "voterIds": [
-        1,
-        2,
-        3
+        2
       ],
       "questions": [
         {
           "id": 1,
           "question": "do you like pizza?",
-          "yesCount": 10
+          "yesCount": 1
         },
         {
           "id": 2,
